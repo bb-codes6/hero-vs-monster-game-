@@ -1,0 +1,17 @@
+int hero = 10;
+int monster = 10;
+
+Random random = new Random();
+
+do
+{
+    int attacks = random.Next(1, 11);
+    monster -= attacks;
+    Console.WriteLine($"Monster was damaged and lost {attacks} health and has {monster}");
+    if (monster <= 0) continue;
+    
+    attacks = random.Next(1, 11);
+    hero -= attacks;
+    Console.WriteLine($"Hero was damaged and lost {attacks} health and now has {hero}");
+} while (hero > 0 && monster > 0);
+Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
